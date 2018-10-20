@@ -1,0 +1,39 @@
+group 'com.atherys'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.2'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+
+group 'NPCModule'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+
+    maven {
+        name = 'sponge'
+        url = 'https://repo.spongepowered.org/maven'
+    }
+
+    maven {
+        name = 'jitpack'
+        url = 'https://jitpack.io'
+    }
+}
+
+dependencies {
+    shadow 'org.spongepowered:spongeapi:7.0.0-SNAPSHOT'
+    shadow 'com.github.Atherys-Horizons:AtherysCore:master-SNAPSHOT'
+    shadow 'com.github.Atherys-Horizons:AtherysScript:master-SNAPSHOT'
+    shadow 'com.github.Atherys-Horizons:NPCs:api7-SNAPSHOT'
+}
