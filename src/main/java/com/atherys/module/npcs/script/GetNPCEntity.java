@@ -11,7 +11,7 @@ import java.util.function.Function;
 public class GetNPCEntity implements Function<NPCFile, Entity> {
 
     /**
-     * Gets the entity object from the NPC, or null.
+     * Gets the `Entity` from the NPC, or null.
      */
     @Override
     public Entity apply(NPCFile npcFile) {
