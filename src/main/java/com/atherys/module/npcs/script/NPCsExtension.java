@@ -21,5 +21,6 @@ public class NPCsExtension implements LibraryExtension {
         scriptLibrary.put("setNPCSkin", new SetNPCSkin());
         scriptLibrary.put("setNPCName", new SetNPCName());
         scriptLibrary.put("getNPCEntity", new GetNPCEntity());
+        scriptLibrary.put("getNPCType", new GetNPCType());
     }
 }
