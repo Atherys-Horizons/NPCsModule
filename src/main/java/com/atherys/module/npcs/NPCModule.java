@@ -3,7 +3,7 @@ package com.atherys.module.npcs;
 import com.atherys.module.npcs.script.NPCsExtension;
 import com.atherys.script.js.JavaScriptLibrary;
 import org.spongepowered.api.event.Listener;
-import org.spongepowered.api.event.game.state.GameStartedServerEvent;
+import org.spongepowered.api.event.game.state.GameInitializationEvent;
 import org.spongepowered.api.plugin.Dependency;
 import org.spongepowered.api.plugin.Plugin;
 
@@ -29,13 +29,13 @@ public class NPCModule {
     @Inject
     private Logger logger;
 
-    private void start() {
+    private void init() {
         JavaScriptLibrary.getInstance().extendWith(NPCsExtension.getInstance());
         logger.info("NPC Scripting module loaded!");
     }
 
     @Listener
-    public void onStart(GameStartedServerEvent e) {
-        start();
+    public void onInit(GameInitializationEvent event) {
+        init();
     }
 }

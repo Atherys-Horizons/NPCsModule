@@ -24,7 +24,7 @@ public class CreateNPC implements BiFunction<String, Location<World>, NPCFile> {
         Optional<EntityType> type = Sponge.getRegistry().getType(EntityType.class, entityTypeId);
         return type.map(entityType-> {
             try {
-                NPCFile npc = NPCs.getNPCManager().create(entityType, location, true);
+                NPCFile npc = NPCs.getNPCManager().create(entityType, location);
                 npc.setTemporary(true);
                 return npc;
             } catch (NPCException e) {
