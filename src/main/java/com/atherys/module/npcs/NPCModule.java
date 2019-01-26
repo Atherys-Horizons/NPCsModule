@@ -6,6 +6,7 @@ import com.atherys.script.js.JavaScriptLibrary;
 import me.mrdaniel.npcs.NPCs;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.event.Listener;
+import org.spongepowered.api.event.Order;
 import org.spongepowered.api.event.game.state.GameInitializationEvent;
 import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 import org.spongepowered.api.plugin.Dependency;
@@ -52,7 +53,7 @@ public class NPCModule {
         init();
     }
 
-    @Listener
+    @Listener(order = Order.LATE)
     public void onStart(GameStartedServerEvent event) {
         if (init) start();
     }
