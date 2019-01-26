@@ -5,6 +5,9 @@ import org.spongepowered.api.Sponge;
 import org.spongepowered.api.event.Event;
 import org.spongepowered.api.event.cause.Cause;
 
+/**
+ * @jsfunc
+ */
 public class RegisterNPCsEvent implements Event {
 
     private Cause cause;
