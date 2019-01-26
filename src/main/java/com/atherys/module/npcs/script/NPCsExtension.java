@@ -16,6 +16,8 @@ public class NPCsExtension implements LibraryExtension {
 
     @Override
     public void extend(ScriptLibrary scriptLibrary) {
+        scriptLibrary.put("onNPCsRegistration", new OnNPCsRegistration());
+
         scriptLibrary.put("createNPC", new CreateNPC());
         scriptLibrary.put("getNPCUUID", new GetNPCUuid());
         scriptLibrary.put("setNPCSkin", new SetNPCSkin());
