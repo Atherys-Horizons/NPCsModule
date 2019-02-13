@@ -1,6 +1,6 @@
 package com.atherys.module.npcs.event;
 
-import me.mrdaniel.npcs.managers.NPCManager;
+import me.mrdaniel.npcs.managers.NpcManager;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.event.Event;
 import org.spongepowered.api.event.cause.Cause;
@@ -12,14 +12,14 @@ public class RegisterNPCsEvent implements Event {
 
     private Cause cause;
 
-    private NPCManager npcManager;
+    private NpcManager npcManager;
 
-    public RegisterNPCsEvent(NPCManager npcManager) {
+    public RegisterNPCsEvent(NpcManager npcManager) {
         this.npcManager = npcManager;
         this.cause = Cause.of(Sponge.getCauseStackManager().getCurrentContext(), npcManager);
     }
 
-    public NPCManager getNpcManager() {
+    public NpcManager getNpcManager() {
         return npcManager;
     }
 

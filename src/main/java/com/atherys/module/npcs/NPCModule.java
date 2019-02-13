@@ -3,8 +3,8 @@ package com.atherys.module.npcs;
 import com.atherys.module.npcs.event.RegisterNPCsEvent;
 import com.atherys.module.npcs.script.NPCsExtension;
 import com.atherys.script.js.JavaScriptLibrary;
-import me.mrdaniel.npcs.NPCs;
-import me.mrdaniel.npcs.io.NPCFile;
+import me.mrdaniel.npcs.Npcs;
+import me.mrdaniel.npcs.io.NpcFile;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.event.Listener;
 import org.spongepowered.api.event.Order;
@@ -37,7 +37,7 @@ public class NPCModule {
     public static final String VERSION = "1.0.0";
 
     private static boolean init;
-    private static Map<String, NPCFile> registry = new HashMap<>();
+    private static Map<String, NpcFile> registry = new HashMap<>();
 
     @Inject
     private Logger logger;
@@ -53,8 +53,8 @@ public class NPCModule {
     }
 
     private void start() {
-        Sponge.getEventManager().post(new RegisterNPCsEvent(NPCs.getNPCManager()));
-        NPCs.reload(container);
+        Sponge.getEventManager().post(new RegisterNPCsEvent(Npcs.getNpcManager()));
+        Npcs.reload(container);
     }
 
     @Listener
@@ -67,11 +67,11 @@ public class NPCModule {
         if (init) start();
     }
 
-    public static void registerNpc(String id, NPCFile npc) {
+    public static void registerNpc(String id, NpcFile npc) {
         registry.put(id, npc);
     }
 
-    public static NPCFile getNpc(String id) {
+    public static NpcFile getNpc(String id) {
         return registry.get(id);
     }
 

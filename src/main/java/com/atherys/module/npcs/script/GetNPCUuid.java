@@ -1,6 +1,6 @@
 package com.atherys.module.npcs.script;
 
-import me.mrdaniel.npcs.io.NPCFile;
+import me.mrdaniel.npcs.io.NpcFile;
 
 import java.util.UUID;
 import java.util.function.Function;
@@ -8,7 +8,7 @@ import java.util.function.Function;
 /**
  * @jsfunc
  */
-public class GetNPCUuid implements Function<NPCFile, UUID> {
+public class GetNPCUuid implements Function<NpcFile, UUID> {
 
     /**
      * Gets the UUID from an NPC. This will be invalidated after a world restart.
@@ -16,7 +16,7 @@ public class GetNPCUuid implements Function<NPCFile, UUID> {
      * @return The NPC's UUID.
      */
     @Override
-    public UUID apply(NPCFile npc) {
+    public UUID apply(NpcFile npc) {
         return npc.getCache().orElse(null);
     }
 }

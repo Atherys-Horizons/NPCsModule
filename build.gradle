@@ -35,5 +35,5 @@ dependencies {
     shadow 'org.spongepowered:spongeapi:7.0.0-SNAPSHOT'
     shadow 'com.github.Atherys-Horizons:AtherysCore:master-SNAPSHOT'
     shadow 'com.github.Atherys-Horizons:AtherysScript:master-SNAPSHOT'
-    shadow 'com.github.Atherys-Horizons:NPCs:3.0.4'
+    shadow 'com.github.Atherys-Horizons:NPCs:3.0.5'
 }
